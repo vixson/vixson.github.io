@@ -31,8 +31,10 @@ body.night .card-text {
   color: #DDDDDD !important;
 }
 
+/* Scrollbar - Start */
+
 * {
-  scrollbar-color: #343a40 transparent;
+  scrollbar-color: var(--accent-dark-color) transparent;
   scrollbar-width: thin
 }
 
@@ -58,6 +60,7 @@ body.night .card-text {
   padding: 1em
 }
 
+/* Scrollbar - End */
 
 :disabled,
 .disabled,

@@ -8,6 +8,20 @@ body {
 
 /* Layout - Start */
 
+.scroll-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  /* overflow: hidden; */
+}
+
+.scrollable {
+  /* border-right: 2px solid transparent; */
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 .fancy {
   position: relative;
   display: inline-block;
@@ -131,7 +145,7 @@ u::after {
   text-align: center;
   /* text-size-adjust: 10%; */
   border-bottom: 0.25rem solid var(--primary-color);
-  padding: 3em;
+  padding: 2rem 1rem 1rem;
   margin-bottom: 0;
 }
 
@@ -155,11 +169,11 @@ u::after {
   width: 100%;
 }
 
-.contents .card {
+.main-content .card {
   overflow: hidden;
 }
 
-.contents .card .card-img {
+.main-content .card .card-img {
   height: 10rem;
   object-fit: cover;
   padding: 0;
@@ -167,12 +181,12 @@ u::after {
   transition: transform 0.2s linear, filter 0.5s linear;
 }
 
-.contents .card:hover .card-img {
+.main-content .card:hover .card-img {
   filter: blur(0.5px);
   transform: scale(1.5);
 }
 
-.contents .card .logo {
+.main-content .card .logo {
   height: 4rem;
   width: 4rem;
   padding: 0.5rem;
@@ -182,7 +196,7 @@ u::after {
   box-shadow: var(--small-shadow);
 }
 
-.contents .card:hover .logo.fa::before {
+.main-content .card:hover .logo.fa::before {
   content: '\f4da';
 }
 
@@ -193,6 +207,10 @@ u::after {
 @media (max-width:576.98px) {
   body {
     flex-direction: column;
+  }
+
+  .scrollable {
+    overflow: unset;
   }
 
   .main-nav,
