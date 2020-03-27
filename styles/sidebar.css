@@ -1,0 +1,199 @@
+* {
+  scrollbar-color: #343a40 transparent;
+  scrollbar-width: thin
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #343a40;
+}
+
+/* Sidebar scrollbar */
+.sidebar ::-webkit-scrollbar {
+  width: 0.25em;
+}
+
+.sidebar ::-webkit-scrollbar-thumb {
+  background-color: #FFFFFF
+}
+
+/**
+* @Description:
+* The overall containing body holding both the sidebar and the rest of the page body
+*/
+.sidebar-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar-toggler {
+  cursor: pointer;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1 1 22.5%;
+  min-height: 100vh;
+  border-right: thin solid #333333;
+  transition: width 0.5s, transform 0.5s, opacity 0.25s;
+}
+
+.sidebar .sidebar-toggler {
+  display: none;
+  padding: 0.5em 1em;
+}
+
+.sidebar .app-brand {
+  text-align: center;
+  padding: 1.5em 0.75em;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 0
+}
+
+.sidebar .label {
+  transition: margin 0.25s, opacity 0.5s;
+}
+
+.sidebar .app-brand .label {
+  margin-left: 0.05em
+}
+
+.sidebar .sidebar-nav {
+  display: block;
+}
+
+.sidebar .sidebar-nav .nav-item {
+  color: #FFFFFF;
+  display: block;
+  padding: 1em 2em;
+  text-decoration: none
+}
+
+.sidebar .sidebar-nav .nav-item .label {
+  margin-left: 1em;
+}
+
+/* Page */
+.page-container {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  flex: 1 1 100%;
+  transition: width 0.5s;
+}
+
+.sidebar-toggled .page-container {
+  position: absolute;
+  width: 100vw;
+}
+
+.topbar {
+  padding: 0.5em 0;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-color);
+  position: relative;
+}
+
+.topbar .app-title {
+  margin-bottom: 0;
+  font-size: 1.5em
+}
+
+.topbar .sidebar-toggler {
+  transform: translateX(-25%);
+  font-size: 1.25em;
+  transition: transform 0.5s
+}
+
+.sidebar-toggled .topbar .sidebar-toggler {
+  transform: translateX(0)
+}
+
+.page-content {
+  position: relative;
+  padding: 3em;
+  width: 100%;
+  border: thin solid #FFFFFF;
+  transition: margin 0.2s
+}
+
+/* Mobile <---> Tablets/Mini PC  */
+@media (min-width:576px) and (max-width:767.98px) {
+  .sidebar-toggled .sidebar {
+    width: 12.5vw
+  }
+
+  .sidebar-toggled .sidebar .app-brand .label,
+  .sidebar-toggled .sidebar .sidebar-nav .nav-item .label {
+    opacity: 0;
+    margin-left: 2em;
+  }
+
+  .sidebar-toggled .page-container {
+    width: 87.5vw
+  }
+}
+
+/* Mobile --> BELOW */
+@media (max-width:575.98px) {
+  .sidebar .sidebar-toggler {
+    display: block;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 80vw;
+    transform: translateX(-100%);
+    opacity: 0;
+    box-shadow: 1px 0 50px #0000006b;
+    z-index: 2;
+  }
+
+
+  .page-container::before {
+    content: '';
+    display: block;
+    transition: background-color 0.2s;
+  }
+
+  .sidebar-toggled .page-container::before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000006b;
+    z-index: 1;
+  }
+
+  .sidebar-toggled .sidebar {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  .page-container {
+    width: 100vw;
+  }
+
+  .topbar .sidebar-toggler {
+    transform: translateX(0)
+  }
+
+  .sidebar-toggled .topbar .sidebar-toggler {
+    transform: translateX(-50%)
+  }
+
+  .page-content {
+    padding: 3em 1em;
+  }
+}

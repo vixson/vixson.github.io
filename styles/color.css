@@ -1,0 +1,201 @@
+/* All color definition for buttons, inputs, filter-effects */
+:root {
+  --accent-color: #34A853;
+  --accent-dark-color: #009933;
+  --primary-color: #5c2d6b;
+  --primary-text-color: #53385C;
+  --primary-background-color: #F3F8FB;
+  --secondary-color: #7677DE;
+  --secondary-text-color: #FFFFFF;
+  --secondary-background-color: #303641;
+  --divider-color: #DEE2E6;
+  --medium-shadow: 0 1px 10px -10px #0000008a;
+  --small-shadow: 0 1px 30px -10px #00000050;
+}
+
+body.night {
+  --primary-color: var(--accent-color);
+  background-color: #333333;
+  color: #FFFFFF;
+}
+
+/* body.night .live-bg {
+  display: none;
+} */
+
+body.night .card {
+  background-color: inherit;
+}
+
+body.night .card-text {
+  color: #DDDDDD !important;
+}
+
+* {
+  scrollbar-color: #343a40 transparent;
+  scrollbar-width: thin
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.5em;
+  height: 0.5em;
+  z-index: 1;
+}
+
+::-webkit-scrollbar-corner {
+  display: none
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-dark-color);
+  border-radius: 0.5em
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  padding: 1em
+}
+
+
+:disabled,
+.disabled,
+[disable] {
+  cursor: not-allowed;
+  filter: grayscale(.8)
+}
+
+.btn.focus,
+:focus-within,
+:focus {
+  outline: none;
+  box-shadow: none !important
+}
+
+.inactive {
+  color: #BCBCCB
+}
+
+.blur {
+  filter: blur(5px)
+}
+
+/* select, .ng-select */
+input::placeholder,
+input::-webkit-input-placeholder {
+  color: #aaaaaa !important
+}
+
+option[disabled]:first-of-type {
+  display: none;
+}
+
+.bg-muted {
+  background-color: #F5F6FA
+}
+
+.bg-inactive {
+  background-color: #8E8E91
+}
+
+.btn-accent {
+  color: #FFFFFF;
+}
+
+.btn-add {
+  background-color: #1FBF8F;
+  color: #FFFFFF !important;
+}
+
+.btn-edit {
+  background-color: #D9B34E;
+  color: #FFFFFF;
+}
+
+.btn-edit:hover {
+  background-color: #C59511;
+}
+
+.btn-add:hover,
+.btn-edit:hover {
+  color: #FFFFFF !important
+}
+
+.btn-cancel {
+  background-color: transparent;
+  color: #1E1E1E
+}
+
+.btn-cancel:hover {
+  background-color: #DDDDDD;
+}
+
+.btn-delete {
+  background-color: transparent;
+  color: #D80E0D;
+}
+
+.btn-delete:hover {
+  background-color: #D80E0D;
+  color: #FFFFFF
+}
+
+.btn-remove {
+  padding: 1em;
+  background-color: transparent
+}
+
+.bg-accent-color {
+  background-color: var(--accent-color);
+  color: #FFFFFF
+}
+
+.bg-primary-color {
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+}
+
+.bg-secondary-color {
+  background-color: var(--secondary-background-color);
+  color: var(--secondary-text-color);
+}
+
+.secondary-color {
+  background-color: var(--secondary-color);
+  color: var(--secondary-text-color);
+}
+
+.btn-outline-grey {
+  background-color: transparent !important;
+  border: thin solid #A3A6B4 !important
+}
+
+.btn-success {
+  background-color: #0DD89A !important;
+}
+
+.btn-warning {
+  background-color: #D9B34E !important;
+}
+
+.btn-danger {
+  background-color: #D80E0D !important;
+}
+
+.btn-remove:hover,
+.btn-close:hover {
+  color: #D80E0D !important;
+}
+
+body a,
+.link {
+  color: currentColor;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+body a:hover,
+.link:hover {
+  color: var(--accent-dark-color)
+}
